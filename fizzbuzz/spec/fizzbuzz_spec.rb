@@ -2,6 +2,18 @@ require_relative '../fizzbuzz.rb'
 
 describe "FizzBuzz" do
 
+  it 'three is divisible by three' do
+    expect(is_divisible_by_three?(3)).to be_true
+  end
+
+  it 'five is divisible by five' do
+    expect(is_divisible_by_five(5)).to be_true
+  end
+
+  it 'fifteen is divisible by three & five' do
+    expect(is_divisible_by_fifteen(15)).to be_true
+  end
+
   it "should return 'Fizz' if divisible by 3" do
     expect(fizzbuzz(3)).to eq('Fizz')  
   end
