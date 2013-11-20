@@ -1,23 +1,22 @@
 def is_divisible_by_three?(number)
-  number % 3 == 0
+  divisible_by?(number, 3)
 end
 
 def is_divisible_by_five(number)
-  number % 5 == 0
+  divisible_by?(number, 5)
 end 
 
 def is_divisible_by_fifteen(number)
-  number % 15 == 0
+  divisible_by?(number, 15)
+end
+
+def divisible_by?(number, divisor)
+  number % divisor == 0
 end
 
 def fizzbuzz(number)
-  if number % 15 == 0
-    "FizzBuzz"
-  elsif is_divisible_by_three?(number)
-    "Fizz"
-  elsif is_divisible_by_five(number)
-    "Buzz"
-  else
-    number
-  end
+  return "FizzBuzz" if is_divisible_by_fifteen(number)
+  return "Fizz"  if is_divisible_by_three?(number)
+  return "Buzz" if is_divisible_by_five(number)
+  number
 end
